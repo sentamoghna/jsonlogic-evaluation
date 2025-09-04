@@ -1,0 +1,23 @@
+dialect "java"
+
+import java.util.Map;
+
+rule "Rule A"
+// salience 11
+when
+    $m : Map( this["income"] >= 50000, !this.containsKey("result") )
+then
+    System.out.println("Rule A fired for income=" + ((Number)$m.get("income")).intValue());
+    $m.put("result", "Rule A");
+    // update($m);
+end
+
+rule "Rule B"
+// salience 12
+when
+    $m : Map( this["income"] >= 40000, !this.containsKey("result") )
+then
+    System.out.println("Rule B fired for income=" + ((Number)$m.get("income")).intValue());
+    $m.put("result", "Rule B");
+    // update($m);
+end

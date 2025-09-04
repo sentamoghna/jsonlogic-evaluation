@@ -1,0 +1,16 @@
+[
+  {
+    "id": "R1",
+    "logic": {
+      "if": [
+        { ">=": [ { "var": "income" }, 50000 ] }, true, false ] },
+    "result": "Rule A"
+  },
+  {
+    "id": "R2",
+    "logic": {
+      "if": [
+        { ">=": [ { "var": "income" }, 40000 ] }, true, false ] },
+    "result": "Rule B"
+  }
+]
